@@ -1212,7 +1212,7 @@ public class GUI extends Canvas {
         bw.write("0 ");
         for (User u : aList) {
             bw.write(u.username + " " + u.password + " ");
-            if (u.username == null) {
+            if (u.dayUsed == null) {
                 bw.write("0 ");
             } else {
                 bw.write(u.dayUsed.toString() + " ");
