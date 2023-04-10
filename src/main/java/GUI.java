@@ -1,4 +1,4 @@
-import javax.imageio.ImageIO; 
+import javax.imageio.ImageIO; // good luck haha
 import javax.swing.*;
 import javax.swing.Timer;
 import java.awt.*;
@@ -781,11 +781,6 @@ public class GUI extends Canvas {
                     c.remove(customizeProblem2);
                     c.validate();
                     c.repaint();
-                    try {
-                        rewriteFile();
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
                 }
             }
         });
@@ -824,11 +819,7 @@ public class GUI extends Canvas {
             public void actionPerformed(ActionEvent e) {
                 focusing(l, (Integer) spinner.getValue(), (Integer) spinner2.getValue(), (Integer) spinner3.getValue());
                 myMethod.execute();
-                try {
-                    rewriteFile();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                current.setText(String.valueOf(currentFocus));
             }
         });
         instructions.addActionListener(new ActionListener() {
@@ -1205,24 +1196,6 @@ public class GUI extends Canvas {
         }
 
     };
-
-
-    public void rewriteFile() throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/accounts", false));
-        bw.write("0 ");
-        for (User u : aList) {
-            bw.write(u.username + " " + u.password + " ");
-            if (u.dayUsed == null) {
-                bw.write("0 ");
-            } else {
-                bw.write(u.dayUsed.toString() + " ");
-            }
-            bw.write(u.days + " " + u.customizationNum + " " + u.currentFocus + " " + u.goal + " " + u.catsKilled);
-            bw.newLine();
-            bw.write("0 ");
-        }
-        bw.flush();
-    }
 // put all of that in the class and put myMethod.execute(); in a button (probably login button) to start the code
 
     private int focusTimer;
@@ -1273,5 +1246,21 @@ public class GUI extends Canvas {
 
         }
 
-    }
+    }/*
+    public void rewriteFile() throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/accounts", false));
+        bw.write("0 ");
+        for (User u : aList) {
+            bw.write(u.username + " " + u.password + " ");
+            if (u.dayUsed == null) {
+                bw.write("0 ");
+            } else {
+                bw.write(u.dayUsed.toString() + " ");
+            }
+            bw.write(u.days + " " + u.customizationNum + " " + u.currentFocus + " " + u.goal + " " + u.catsKilled);
+            bw.newLine();
+            bw.write("0 ");
+        }
+        bw.flush();
+    }*/
 }
