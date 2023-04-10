@@ -977,7 +977,7 @@ public class GUI extends Canvas {
         create.setBackground(Color.WHITE);
         bigPanel.add(create);
 
-        JLabel feedback = new JLabel("hi");
+        JLabel feedback = new JLabel("");
         feedback.setBounds(175, 315, 150, 30);
         feedback.setFont(ftext);
         bigPanel.add(feedback);
