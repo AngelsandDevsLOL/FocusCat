@@ -819,7 +819,6 @@ public class GUI extends Canvas {
             public void actionPerformed(ActionEvent e) {
                 focusing(l, (Integer) spinner.getValue(), (Integer) spinner2.getValue(), (Integer) spinner3.getValue());
                 myMethod.execute();
-                currentFocus--;
                 current.setText(String.valueOf(currentFocus));
             }
         });
