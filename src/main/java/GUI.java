@@ -486,7 +486,7 @@ public class GUI extends Canvas {
 
     public void welcome() throws IOException {
         JFrame frame = new JFrame("Focus Cat");
-        JLabel welcome = new JLabel("WELCOME PAGE!");
+        JLabel welcome = new JLabel("TIMER PAGE!");
         welcome.setFont(new Font("Broadway", Font.BOLD, 30));
         welcome.setBounds(50, 375, 500, 50);
         panel.add(welcome);
